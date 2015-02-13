@@ -9,6 +9,13 @@ as if your serial cable actually had a dtr pin.
 Instructions:
 -------------
 
+Install using script:
+
+    $ git clone https://github.com/openenergymonitor/avrdude-rpi.git ~/avrdude-rpi && ~/avrdude-rpi/install
+
+
+Manual Install: 
+
 Copy both files into your /usr/bin directory, then rename the original avrdude to avrdude-original
 and symlink avrdude-autoreset to become avrdude.
 
