@@ -1,7 +1,17 @@
 #!/bin/bash
 
 sudo apt-get install -y avrdude python-dev python-rpi.gpio minicom
+
+echo "install avrdude autoreset"
+
 sudo cp /home/pi/avrdude-rpi/autoreset /usr/bin
 sudo cp /home/pi/avrdude-rpi/avrdude-autoreset /usr/bin
-sudo mv /usr/bin/avrdude /usr/bin/avrdude-original
-sudo ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
+
+if [ ! -f /usr/bin/avrdude-original ]; then 
+	sudo mv /usr/bin/avrdude /usr/bin/avrdude-original
+	sudo ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
+fi
+
+
+
+
