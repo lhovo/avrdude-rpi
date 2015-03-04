@@ -32,7 +32,7 @@ it is about to upload hex data.
 
 To upload to the RFM12/69Pi (ATmega328 @ 8Mhz):
 
-    avrdude -v  -c arduino -p ATMEGA328P -P /dev/ttyAMA0 -b 38400 -U flash:w:sketch_name.hex
+    $ avrdude -v  -c arduino -p ATMEGA328P -P /dev/ttyAMA0 -b 38400 -U flash:w:sketch_name.hex
 
 To upload to the emonPi (ATmega328 @ 16Mhz): 
 
