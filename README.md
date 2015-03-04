@@ -30,7 +30,11 @@ autoreset where we do "pin = 4" and change the 4 to your gpio pin number.
 Now when you run avrdude from anywhere (including via arduino's normal UI) it will flag dtr when
 it is about to upload hex data.
 
-To upload to the RFM69Pi: 
+To upload to the RFM12/69Pi (ATmega328 @ 8Mhz):
+
+    avrdude -v  -c arduino -p ATMEGA328P -P /dev/ttyAMA0 -b 38400 -U flash:w:sketch_name.hex
+
+To upload to the emonPi (ATmega328 @ 16Mhz): 
 
     $ avrdude -v -c arduino -p ATMEGA328P -P /dev/ttyAMA0 -b 115200 -U flash:w:sketch_name.hex
 
