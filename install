@@ -1,22 +1,16 @@
 #!/bin/bash
 
-echo "display serial console to enable use of /dev/AMA0 serial port"
-sudo wget https://raw.githubusercontent.com/openenergymonitor/rpi-serial-console/master/rpi-serial-console -O /usr/bin/rpi-serial-console && sudo chmod +x /usr/bin/rpi-serial-console
-sudo rpi-serial-console disable
-
 sudo apt-get install -y avrdude python-dev python-rpi.gpio minicom
 
 echo "install avrdude autoreset"
 
-sudo cp /home/pi/avrdude-rpi/autoreset /usr/bin
-sudo cp /home/pi/avrdude-rpi/avrdude-autoreset /usr/bin
+sudo ls -s /home/pi/avrdude-rpi/autoreset /usr/bin
 
 if [ ! -f /usr/bin/avrdude-original ]; then 
 	sudo mv /usr/bin/avrdude /usr/bin/avrdude-original
-	sudo ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
 fi
 
-
+sudo ln -s /home/pi/avrdude-rpi/avrdude-autoreset /usr/bin/avrdude
 
 
 
