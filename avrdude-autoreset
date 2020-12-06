@@ -1,3 +1,4 @@
 #!/bin/sh
 
-sudo strace -o "|autoreset" -eioctl /usr/bin/avrdude-original $@
+BASEDIR=$(dirname "$0")
+sudo strace -o "|${BASEDIR}/autoreset" -eioctl ${BASEDIR}/avrdude-original $@
